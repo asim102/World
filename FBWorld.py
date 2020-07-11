@@ -118,21 +118,8 @@ def login():
 		print 48*"\x1b[1;96m═"
 		print "\033[40;91m Enjoy \x1b[93min \033[92mYour \x1b[94mLife , \033[96mNever \033[95mGive \x1b[91mup \033[92m! KEEP SMILE \x1b[0m"
 		print 48*"\x1b[1;96m═"
-		id = raw_input("\033[1;96m[★] \x1b[1;93mID/Email \x1b[1;91m: \x1b[1;92m")
-		pwd = raw_input("\033[1;96m[★] \x1b[1;93mPassword \x1b[1;91m: \x1b[1;92m")
-		tik()
-		try:
-			br.open('https://m.facebook.com')
-		except mechanize.URLError:
-			print "\n\033[1;96m[!] \x1b[1;91mTidak ada koneksi"
-			keluar()
-		br._factory.is_html = True
-		br.select_form(nr=0)
-		br.form['email'] = id
-		br.form['pass'] = pwd
-		br.submit()
-		url = br.geturl()
-		if 'save-device' in url:
+		
+		
 			try:
 				sig= 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
 				data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"}
